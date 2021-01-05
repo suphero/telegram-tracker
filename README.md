@@ -2,20 +2,20 @@
 
 Track and save specified telegram chats into database.
 
-## Preparation
+## Preparation
 
 - Create Telegram Account
 - Get Telegram development credentials in [Telegram API Development Tools](https://my.telegram.org/apps)
 - Create Mongo Database
 
-## Configuration
+## Configuration
 
 - Create config.ini file (template: [config.temp.ini](./config.temp.ini))
 - `api_id` & `api_hash` from [Telegram API Development Tools](https://my.telegram.org/apps)
 - `phone` & `username` of Telegram Account
 - `mongo_uri` from created Mongo Database
 
-## Channels
+## Channels
 
 - Create a Mongo collection named `channels`
 - Find channel ids to tracker. Channel id should be a number with length of 10.
