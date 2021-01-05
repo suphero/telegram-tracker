@@ -19,9 +19,9 @@ Track and save specified telegram chats into database.
 
 - Create a Mongo collection named `channels`
 - Find channel ids to tracker. Channel id should be a number with length of 10.
-  - You can forward any message from channel to [GetIDs Bot](https://t.me/getidsbot) and get the number from `Origin Chat/id`. -100 prefix should be omitted. -1001234567890 -> 1234567890
-  - You can get id from [Telegram Web](https://web.telegram.org) channel url (for some channels). If the url is like https://web.telegram.org/#/im?p=c1234567890_0000000000000000000 then the id is 1234567890 (from c to underscore).
-- Add channel ids into `channels` collection `{ "id": 1234567890 }`
+  - You can forward any message from channel to [GetIDs Bot](https://t.me/getidsbot) and get the number from `Origin Chat/id`. -100 prefix should be omitted (`-1001234567890 -> 1234567890`).
+  - You can get id from [Telegram Web](https://web.telegram.org) channel url (for some channels). If the url is like https://web.telegram.org/#/im?p=c1234567890_0000000000000000000 then the id is `1234567890` (from c to underscore).
+- Add channel ids into `channels` collection (e.g. `{ "id": 1234567890 }`).
 
 ## Task
 
