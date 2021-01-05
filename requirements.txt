@@ -1,0 +1,4 @@
+asyncio==3.4.3
+pymongo[srv]==3.11.2
+telethon==1.18.2
+dnspython==2.0.0
