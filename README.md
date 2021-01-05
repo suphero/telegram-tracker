@@ -28,3 +28,6 @@ Track and save specified telegram chats into database.
 - Run `python main.py` script
 - Authenticate telegram from python console (one time)
 - A Mongo collection named `histories` will be created.
+- Script can be re-run anytime.
+- Getting all messages from new channel may take long according to number of messages.
+- Getting new messages from existing channel should take average of 1 second.
