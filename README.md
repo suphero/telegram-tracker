@@ -1,6 +1,6 @@
 # Telegram Tracker
 
-Track and save specified telegram chats into database.
+Track and save Telegram channel messages into database. This project's core is completely based on [Amir Yousefi](https://github.com/amiryousefi)'s [Telegram Analysis](https://github.com/amiryousefi/telegram-analysis).
 
 ## Preparation
 
@@ -31,3 +31,8 @@ Track and save specified telegram chats into database.
 - Script can be re-run anytime.
 - Getting all messages from new channel may take long according to number of messages.
 - Getting new messages from existing channel should take average of 1 second.
+
+## To Do
+
+- [ ] Dependecy injection
+- [ ] Unit Test
