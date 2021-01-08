@@ -1,7 +1,7 @@
-from config import ConfigHandler
-from data import DataHandler
-from telegram import TelegramHandler
-from performance import PerformanceHandler
+from config_handler import ConfigHandler
+from data_handler import DataHandler
+from telegram_handler import TelegramHandler
+from performance_handler import PerformanceHandler
 
 
 class TrackingHandler:
