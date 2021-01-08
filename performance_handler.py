@@ -10,8 +10,8 @@ class PerformanceHandler:
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.end_time = perf_counter()
-        self._print()
+        self.__print()
 
-    def _print(self):
+    def __print(self):
         elapsed_time = self.end_time - self.start_time
         print(self.string_to_format.format(elapsed_time))

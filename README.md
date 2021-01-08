@@ -34,5 +34,5 @@ Track and save Telegram channel messages into database. This project's core is c
 
 ## To Do
 
-- [ ] Dependecy injection
+- [ ] Dependency injection
 - [ ] Unit Test
