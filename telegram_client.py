@@ -1,15 +1,15 @@
 from telethon import TelegramClient
 from telethon.tl.functions.messages import GetHistoryRequest
+from telethon.tl.types import TypeInputPeer
+from telethon.hints import EntitiesLike
+
+from config_handler import ConfigHandler
 
 
 class MyTelegramClient:
     def __init__(self, config_handler: 'ConfigHandler'):
-        self.username = config_handler.username
-        self.api_id = config_handler.api_id
-        self.api_hash = config_handler.api_hash
         self.phone = config_handler.phone
-        self.limit = 100
-        self.telegram_client = TelegramClient(self.username, self.api_id, self.api_hash)
+        self.telegram_client = TelegramClient(config_handler.username, config_handler.api_id, config_handler.api_hash)
 
     async def __aenter__(self):
         await self.telegram_client.connect()
@@ -17,16 +17,10 @@ class MyTelegramClient:
     async def __aexit__(self, exc_type, exc_val, exc_tb):
         await self.telegram_client.disconnect()
 
-    def connect(self):
-        return self.telegram_client.connect()
-
-    def disconnect(self):
-        return self.telegram_client.disconnect()
-
     def start(self):
         return self.telegram_client.start()
 
-    def get_entity(self, entity: 'hints.EntitiesLike'):
+    def get_entity(self, entity: 'EntitiesLike'):
         return self.telegram_client.get_entity(entity)
 
     def is_user_authorized(self):
@@ -47,7 +41,7 @@ class MyTelegramClient:
             offset_id=0,
             offset_date=None,
             add_offset=0,
-            limit=self.limit,
+            limit=100,
             max_id=0,
             min_id=min_id,
             hash=0

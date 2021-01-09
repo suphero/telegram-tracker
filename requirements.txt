@@ -1,4 +1,5 @@
 asyncio==3.4.3
 pymongo[srv]==3.11.2
-telethon==1.18.2
-dnspython==2.0.0
+telethon==1.19.0
+dnspython==2.1.0
+dependency-injector==4.5.4
