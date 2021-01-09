@@ -1,10 +1,10 @@
 from dependency_injector import containers, providers
 
-from config_handler import ConfigHandler
-from data_handler import DataHandler
-from telegram_handler import TelegramHandler
-from telegram_client import MyTelegramClient
-from tracking_handler import TrackingHandler
+from handler.config_handler import ConfigHandler
+from handler.data_handler import DataHandler
+from handler.telegram_handler import TelegramHandler
+from client.telegram_client import MyTelegramClient
+from handler.tracking_handler import TrackingHandler
 
 
 class Container(containers.DeclarativeContainer):

@@ -25,7 +25,7 @@ Track and save Telegram channel messages into database. This project's core is c
 
 ## Task
 
-- Run `python main.py` script
+- Run `python .` script
 - Authenticate telegram from python console (one time)
 - A Mongo collection named `histories` will be created.
 - Script can be re-run anytime.

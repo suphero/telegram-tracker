@@ -5,20 +5,17 @@ from dependency_injector.wiring import inject, Provide
 
 from containers import Container
 
-from performance_handler import PerformanceHandler
-from telegram_client import MyTelegramClient
-from tracking_handler import TrackingHandler
+from handler.performance_handler import PerformanceHandler
+from handler.tracking_handler import TrackingHandler
 
 
 @inject
 async def main(
-    telegram_client: MyTelegramClient = Provide[Container.telegram_client],
     tracking_handler: TrackingHandler = Provide[Container.tracking_handler]
 ) -> None:
     performance_handler = PerformanceHandler("{:.2f} seconds passed")
     with performance_handler:
-        async with telegram_client:
-            await tracking_handler.track()
+        await tracking_handler.track()
 
 
 if __name__ == "__main__":

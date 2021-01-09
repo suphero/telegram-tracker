@@ -1,6 +1,6 @@
 from pymongo import MongoClient, DESCENDING
 
-from config_handler import ConfigHandler
+from handler.config_handler import ConfigHandler
 
 
 class DataHandler:

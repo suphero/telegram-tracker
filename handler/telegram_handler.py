@@ -1,15 +1,15 @@
 from telethon.errors import SessionPasswordNeededError
 from telethon.tl.types import PeerChannel, TypeInputPeer
 
-from telegram_client import MyTelegramClient
+from client.telegram_client import MyTelegramClient
 
 
 class TelegramHandler:
     def __init__(self, telegram_client: MyTelegramClient):
         self.telegram_client = telegram_client
 
-    def start(self):
-        self.telegram_client.start()
+    async def start(self):
+        await self.telegram_client.start()
 
     async def get_entity(self, channel_id: int):
         entity = PeerChannel(channel_id)

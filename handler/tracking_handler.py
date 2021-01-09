@@ -1,7 +1,7 @@
-from config_handler import ConfigHandler
-from data_handler import DataHandler
-from telegram_handler import TelegramHandler
-from performance_handler import PerformanceHandler
+from handler.config_handler import ConfigHandler
+from handler.data_handler import DataHandler
+from handler.telegram_handler import TelegramHandler
+from handler.performance_handler import PerformanceHandler
 
 
 class TrackingHandler:
@@ -14,7 +14,11 @@ class TrackingHandler:
         self.data_handler = data_handler
 
     async def track(self):
-        self.telegram_handler.start()
+        async with self.telegram_handler.telegram_client:
+            await self.__start_track()
+
+    async def __start_track(self):
+        await self.telegram_handler.start()
         await self.telegram_handler.authorize()
 
         channels = self.data_handler.find_channels()

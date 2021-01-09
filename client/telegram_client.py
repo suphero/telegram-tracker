@@ -3,7 +3,7 @@ from telethon.tl.functions.messages import GetHistoryRequest
 from telethon.tl.types import TypeInputPeer
 from telethon.hints import EntitiesLike
 
-from config_handler import ConfigHandler
+from handler.config_handler import ConfigHandler
 
 
 class MyTelegramClient:
