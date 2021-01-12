@@ -5,6 +5,9 @@ from handler.performance_handler import PerformanceHandler
 
 
 class TrackingHandler:
+    """
+    Telegram message tracker
+    """
     def __init__(self,
                  telegram_handler: 'TelegramHandler',
                  config_handler: 'ConfigHandler',
@@ -14,6 +17,9 @@ class TrackingHandler:
         self.data_handler = data_handler
 
     async def track(self):
+        """
+        Get new messages from Telegram and save them
+        """
         async with self.telegram_handler.telegram_client:
             await self.__start_track()
 
@@ -27,9 +33,9 @@ class TrackingHandler:
             str_to_format = "Channel: " + str(channel_id) + " ({:.2f} secs)"
             perf_handler = PerformanceHandler(str_to_format)
             with perf_handler:
-                await self.process_channel(channel_id)
+                await self.__process_channel(channel_id)
 
-    async def process_channel(self, channel_id: int):
+    async def __process_channel(self, channel_id: int):
         last_id = self.data_handler.get_last_id(channel_id)
         all_messages = []
 
@@ -45,9 +51,9 @@ class TrackingHandler:
                 all_messages.append(message)
             last_id = messages[0].id
 
-        self.insert_to_history(all_messages)
+        self.__insert_to_history(all_messages)
 
-    def insert_to_history(self, messages):
+    def __insert_to_history(self, messages):
         if len(messages) == 0:
             return
         all_messages = []

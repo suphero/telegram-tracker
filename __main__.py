@@ -13,6 +13,9 @@ from handler.tracking_handler import TrackingHandler
 async def main(
     tracking_handler: TrackingHandler = Provide[Container.tracking_handler]
 ) -> None:
+    """
+    Code entry point
+    """
     performance_handler = PerformanceHandler("{:.2f} seconds passed")
     with performance_handler:
         await tracking_handler.track()

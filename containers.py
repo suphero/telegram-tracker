@@ -8,7 +8,7 @@ from handler.tracking_handler import TrackingHandler
 
 
 class Container(containers.DeclarativeContainer):
-    config_handler = providers.Factory(
+    config_handler = providers.Singleton(
         ConfigHandler
     )
 

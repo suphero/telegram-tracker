@@ -7,6 +7,9 @@ from handler.config_handler import ConfigHandler
 
 
 class MyTelegramClient:
+    """
+    Telegram Client
+    """
     def __init__(self, config_handler: 'ConfigHandler'):
         self.phone = config_handler.phone
         self.telegram_client = TelegramClient(config_handler.username, config_handler.api_id, config_handler.api_hash)
@@ -18,6 +21,9 @@ class MyTelegramClient:
         await self.telegram_client.disconnect()
 
     def start(self):
+        """
+        Start client
+        """
         return self.telegram_client.start()
 
     def get_entity(self, entity: 'EntitiesLike'):
